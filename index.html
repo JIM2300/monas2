@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monas Petroleum Marketing Nigeria Limited - Company Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling for navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #e91e63, #9c27b0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e91e63;
+        }
+
+        /* Section Base Styles */
+        .section {
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="industrial" patternUnits="userSpaceOnUse" width="100" height="100"><rect width="100" height="100" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="50" r="20" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="1000" height="1000" fill="url(%23industrial)"/></svg>') center/cover;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .hero .tagline {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+        }
+
+        .hero .company-details {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            background: linear-gradient(135deg, #ff6b35 0%, #e91e63 50%, #9c27b0 100%);
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-divider h2 {
+            font-size: 4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: #f8f9fa;
+            padding: 6rem 2rem;
+        }
+
+        .content-section.white {
+            background: white;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .content-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #e91e63;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .content-card h3 {
+            font-size: 1.5rem;
+            color: #e91e63;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .content-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* Two-column layouts */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .image-placeholder {
+            height: 400px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #1976d2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><pattern id="grid" patternUnits="userSpaceOnUse" width="40" height="40"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(25,118,210,0.1)" stroke-width="1"/></pattern></defs><rect width="400" height="400" fill="url(%23grid)"/></svg>');
+        }
+
+        /* Mission, Vision, Values */
+        .mvv-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .oil-barrels {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            background: linear-gradient(135deg, #263238, #37474f);
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .barrel {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(135deg, #424242, #616161);
+            border-radius: 10px;
+            margin: 5px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .barrel::before {
+            content: '🛢️';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+        }
+
+        .mvv-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .mvv-item {
+            background: rgba(233, 30, 99, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #e91e63;
+        }
+
+        .mvv-item h3 {
+            font-size: 1.8rem;
+            color: #e91e63;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid #e91e63;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h4 {
+            font-size: 1.3rem;
+            color: #e91e63;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* Leadership Grid */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .leader-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .leader-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e91e63, #9c27b0);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .leader-card h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 6rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #ffa726;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-divider h2 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .mvv-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+        }
+
+        /* Scroll indicators */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(233, 30, 99, 0.1);
+            z-index: 1001;
+        }
+
+        .scroll-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #e91e63, #9c27b0);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">MONAS PETROLEUM</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>MONAS PETROLEUM MARKETING NIGERIA LIMITED</h1>
+                <p class="subtitle">WHERE WISDOM FUELS ENERGY</p>
+                <p class="tagline">AN OVERVIEW OF KEY OPERATIONS AND BUSINESS ACTIVITIES</p>
+                <div class="company-details">
+                    <p>RC: 1959335 | Leading Energy Solutions Provider in Nigeria</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Introduction Divider -->
+    <section class="section-divider fade-in">
+        <div class="container">
+            <h2>Company Introduction</h2>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section id="overview" class="section content-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Company Overview</h2>
+            <div class="two-column">
+                <div>
+                    <div class="content-card">
+                        <h3>Core Business and Products</h3>
+                        <p>Monas Petroleum specializes in marketing and distributing refined petroleum products such as PMS (Petrol), AGO (Diesel), DPK (Kerosene), and LPG (Liquefied Petroleum Gas).</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Operational Excellence</h3>
+                        <p>The company emphasizes safety, operational efficiency, and customer satisfaction to ensure reliable service delivery across all operations.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Market Reach and Clients</h3>
+                        <p>Serving diverse clients including industries and government agencies, driving economic growth across Nigeria and beyond.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Infrastructure and Workforce</h3>
+                        <p>Robust infrastructure and experienced workforce ensure timely delivery and consistent service excellence.</p>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    🏭 Industrial Operations
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision, Mission & Core Values -->
+    <section class="section content-section white fade-in">
+        <div class="container">
+            <h2 class="section-title">Vision, Mission & Core Values</h2>
+            <div class="mvv-container">
+                <div class="oil-barrels">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; max-width: 200px;">
+                        <div class="barrel"></div>
+                        <div class="barrel"></div>
+                        <div class="barrel"></div>
+                        <div class="barrel"></div>
+                        <div class="barrel"></div>
+                        <div class="barrel"></div>
+                    </div>
+                </div>
+                <div class="mvv-content">
+                    <div class="mvv-item">
+                        <h3>Company Vision</h3>
+                        <p>To become a leading, innovative and customer centric energy marketing company in the world.</p>
+                    </div>
+                    <div class="mvv-item">
+                        <h3>Mission Statement</h3>
+                        <p>To deliver quality energy products and services through strategic partnerships, operational excellence with integrity driven leadership.</p>
+                    </div>
+                    <div class="mvv-item">
+                        <h3>Core Values</h3>
+                        <p>Safety, Integrity, Innovation, Teamwork, and Excellence guide all operations and client interactions, fostering trust and long-term relationships with clients and stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services and Market Reach Divider -->
+    <section class="section-divider fade-in">
+        <div class="container">
+            <h2>Services And Market Reach</h2>
+        </div>
+    </section>
+
+    <!-- Nature of Business & Services -->
+    <section id="services" class="section content-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Nature of Business & Services</h2>
+            <div class="two-column">
+                <div class="image-placeholder">
+                    ⛽ Modern Filling Station
+                </div>
+                <div>
+                    <div class="content-card">
+                        <h3>Fuel Sales and Distribution</h3>
+                        <p>Monas Petroleum handles retail and bulk sales of petrol, diesel, and liquefied natural gas ensuring reliable energy supply.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>LPG Supply and Marketing</h3>
+                        <p>The company supplies and markets LPG cooking gas, catering to household and commercial energy needs safely and efficiently.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Infrastructure and Logistics</h3>
+                        <p>Monas Petroleum constructs and manages filling stations and provides haulage and logistics for petroleum products across regions.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Energy Consultancy Services</h3>
+                        <p>Offering expert energy consultancy and allied services, Monas Petroleum supports clients for efficient and safe energy solutions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h4>Retail & Bulk Sales</h4>
+                    <p>PMS (Petrol), AGO (Diesel), and LNG (Liquefied Natural Gas) distribution</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛢️</div>
+                    <h4>Lubricants & Engine Oil</h4>
+                    <p>Comprehensive distribution of quality lubricants and engine oils</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h4>LPG Supply & Marketing</h4>
+                    <p>Cooking gas supply and marketing solutions</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⛽</div>
+                    <h4>Filling Station Management</h4>
+                    <p>Construction and management of modern filling stations</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚛</div>
+                    <h4>Haulage & Logistics</h4>
+                    <p>Efficient transportation and logistics of petroleum products</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h4>Energy Consultancy</h4>
+                    <p>Professional energy consultancy and allied services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Markets and Strategic Advantages -->
+    <section class="section content-section white fade-in">
+        <div class="container">
+            <h2 class="section-title">Key Markets and Strategic Advantages</h2>
+            <div class="two-column">
+                <div class="image-placeholder">
+                    🏭 Industrial Facility & Logistics
+                </div>
+                <div>
+                    <div class="content-card">
+                        <h3>Diverse Market Segments</h3>
+                        <p>Monas Petroleum serves industrial, transportation, agriculture, government, and retail sectors, covering a broad client base.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Extensive Distribution Network</h3>
+                        <p>The company operates a strong network of fuel stations and distribution points ensuring wide market reach and accessibility.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Reliable Supply Chain</h3>
+                        <p>Partnerships with major depots and a modern fleet enable timely and consistent fuel delivery to clients.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Experienced Workforce and Quality Focus</h3>
+                        <p>A skilled workforce combined with commitment to quality and regulatory compliance strengthens competitive advantage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Structure and Compliance Divider -->
+    <section class="section-divider fade-in">
+        <div class="container">
+            <h2>Corporate Structure And Compliance</h2>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section id="leadership" class="section content-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Leadership Team</h2>
+            <div class="two-column">
+                <div class="image-placeholder">
+                    👥 Professional Leadership Team
+                </div>
+                <div>
+                    <div class="content-card">
+                        <h3>Experienced Leadership</h3>
+                        <p>The team consists of seasoned professionals with extensive expertise in their respective fields.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Strategic Direction</h3>
+                        <p>Leadership is focused on steering the company towards strategic goals and sustainable growth.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Governance and Accountability</h3>
+                        <p>The leadership ensures high standards of governance and accountability within the organization.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Culture of Excellence</h3>
+                        <p>Their collective leadership fosters a culture of innovation, excellence, and organizational growth.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-avatar">👨‍💼</div>
+                    <h4>Mr. Muhammed Anesu Suleman</h4>
+                    <p>MD/CEO</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-avatar">👩‍💼</div>
+                    <h4>Mrs. Suleman Muhammed Aisha</h4>
+                    <p>Chief Financial Officer</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-avatar">👨‍⚖️</div>
+                    <h4>Nasiru Usman Agahu Esq. Mclrj.</h4>
+                    <p>Chief Legal and Compliance Officer</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-avatar">👨‍💼</div>
+                    <h4>Mr. Kabiru Shielu</h4>
+                    <p>Chief Operating Officer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Licenses and Regulatory Compliance -->
+    <section class="section content-section white fade-in">
+        <div class="container">
+            <h2 class="section-title">Licenses and Regulatory Compliance</h2>
+            <div class="two-column">
+                <div>
+                    <div class="content-card">
+                        <h3>Licensed by Regulatory Agencies</h3>
+                        <p>Monas Petroleum is licensed by key Nigerian regulatory bodies including NMDPRA, SON, FIRS, and other statutory agencies ensuring lawful operation and industry standards.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Commitment to Quality and Safety</h3>
+                        <p>The company maintains high standards of quality and safety in all its operations to protect stakeholders.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Ethical and Responsible Operations</h3>
+                        <p>Compliance with regulations ensures ethical practices and responsibility in delivering services to clients.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Enhanced Client Trust</h3>
+                        <p>Strict regulatory adherence enhances the company's reputation and builds client confidence and trust.</p>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    📋 Compliance Documentation
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements and Social Responsibility Divider -->
+    <section class="section-divider fade-in">
+        <div class="container">
+            <h2>Achievements And Social Responsibility</h2>
+        </div>
+    </section>
+
+    <!-- Projects and Achievements -->
+    <section class="section content-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Projects and Achievements</h2>
+            <div class="two-column">
+                <div class="image-placeholder">
+                    ⛽ Modern Filling Station Network
+                </div>
+                <div>
+                    <div class="content-card">
+                        <h3>Establishment of Filling Stations</h3>
+                        <p>Monas Petroleum has successfully established multiple filling stations across key Nigerian states including Abuja, Nasarawa State, Kogi State, Niger State and others, enhancing fuel accessibility and presence.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Strategic Partnerships</h3>
+                        <p>The company has partnered with major organizations including Zero Bravo Investment Limited, MNE Logistics, and Dangote Group to strengthen its supply chain and expand its industry reach.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Commitment to Growth and Innovation</h3>
+                        <p>Continuous investment in infrastructure and partnerships highlights Monas Petroleum's dedication to industry leadership and excellence with comprehensive supply chain network covering the entire energy/petroleum sector.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health, Safety, Environment and CSR -->
+    <section class="section content-section white fade-in">
+        <div class="container">
+            <h2 class="section-title">Health, Safety, Environment and CSR</h2>
+            <div class="two-column">
+                <div>
+                    <div class="content-card">
+                        <h3>Health and Safety Standards</h3>
+                        <p>Monas Petroleum upholds rigorous health and safety standards to protect its staff and customers effectively.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Environmental Sustainability</h3>
+                        <p>The company prioritizes minimizing its ecological footprint through proactive environmental conservation measures.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Community Empowerment Programs</h3>
+                        <p>Monas Petroleum supports community development through empowerment, youth training, and employment initiatives.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Professional Development Sponsorship</h3>
+                        <p>The company sponsors professional development in computing and accounting for young lawyers and NYSC members, demonstrating commitment to education and professional growth.</p>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    ⛑️ Safety Equipment & HSE
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Divider -->
+    <section class="section-divider fade-in">
+        <div class="container">
+            <h2>Contact Information</h2>
+        </div>
+    </section>
+
+    <!-- Company Contact Details -->
+    <section id="contact" class="section contact-section fade-in">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Company Contact Details</h2>
+            <div class="two-column">
+                <div class="image-placeholder">
+                    🏢 Modern Corporate Building
+                </div>
+                <div>
+                    <div style="color: white; font-size: 1.2rem; line-height: 1.8;">
+                        <h3 style="color: #ffa726; margin-bottom: 1rem;">Office Locations</h3>
+                        <p>Monas Petroleum has strategic offices in Abuja and Lagos to enhance client engagement and service delivery.</p>
+                        
+                        <h3 style="color: #ffa726; margin: 2rem 0 1rem;">Phone Contact</h3>
+                        <p>Clients can reach the company easily through dedicated phone lines for prompt communication and support.</p>
+                        
+                        <h3 style="color: #ffa726; margin: 2rem 0 1rem;">Email Communication</h3>
+                        <p>Email contact ensures efficient and written communication between clients and the company support team.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h4>Phone Numbers</h4>
+                    <p>07033909822<br>08152676953</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h4>Email Address</h4>
+                    <p>Suleman.a@monaspetroleum.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🏢</div>
+                    <h4>Abuja Office</h4>
+                    <p>Suite 4, 1st Floor<br>21, Blantyre Street<br>Wuse Zone 2, FCT-Abuja, Nigeria</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🏢</div>
+                    <h4>Lagos Office</h4>
+                    <p>Flat 11, Jordan Apartment<br>Adeniyi Coker Street, Dideolu Estate<br>Off Akinbola Street, Victoria Island, Lagos State, Nigeria</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);">
+                <h3 style="color: #ffa726; font-size: 2rem; margin-bottom: 1rem;">Ready to Partner with You</h3>
+                <p style="font-size: 1.5rem; font-style: italic;">WHERE WISDOM FUELS ENERGY</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = (scrollTop / scrollHeight) * 100;
+            document.getElementById('scrollProgress').style.width = scrollPercentage + '%';
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
